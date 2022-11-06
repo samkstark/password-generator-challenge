@@ -24,18 +24,27 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   var passwordLength = prompt("How many characters would you like your password to be?")}
 function getLower() {
-  return String.fromCharCode(Math.floor(Math.random()*26) + 97);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
-console.log(getLower());
+console.log(getUpper());
 
 function getUpper() {
-  return String.fromCharCode(Math.floor(Math.random()*26) + 65);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
   var upperCase = confirm("Would you like your password to include uppercase letters?")
   if (upperCase) {
-    console.log(upperCase);
+   
   }
+
+  function getNumber() {
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  }
+
+ function getSpecial() {
+  const special = '!@$%^&*(){}[],.<>/#~';
+  return special[1];
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -46,4 +55,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);}
