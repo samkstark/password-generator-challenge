@@ -36,19 +36,13 @@ var yesSymbols = confirm("Would you like your password to include symbols?")
 var yesLower = confirm("Would you like your password to include lowercase letters?")
 var yesUpper = confirm("Would you like your password to include uppercase letters?")
 
-function yesNumbers() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-function yesSymbols() {
-  const symbols = '!@$%^&*(){}[],.<>/#~';
-  return symbols[Math.floor(Math.random() * symbols.length)]; 
- }
- function yesLowers() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-function yesUppers() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
+var numberList = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"]  
+var symbolList = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "-", "="]
+var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var uppercaseList = []
+
+for (var i = 0; i < numberList.length; i++) {
+  uppercaseList[i] = lowercaseList[i].toUpperCase()
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
