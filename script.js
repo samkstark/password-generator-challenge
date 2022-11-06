@@ -16,7 +16,12 @@
 
 // Assignment code here
 
-
+const Func = {
+  lower: getLower,
+  upper: getUpper,
+  number: getNumber,
+  symbol: getSymbol
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -27,7 +32,7 @@ function getLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
-console.log(getUpper());
+
 
 function getUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
@@ -40,11 +45,11 @@ function getUpper() {
   function getNumber() {
     return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
   }
-
- function getSpecial() {
-  const special = '!@$%^&*(){}[],.<>/#~';
-  return special[1];
-
+ function getSymbol() {
+  const symbols = '!@$%^&*(){}[],.<>/#~';
+  return symbols[Math.floor(Math.random() * symbols.length)]; 
+ }
+ console.log(getSymbol());
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -55,4 +60,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);}
+generateBtn.addEventListener("click", writePassword);
