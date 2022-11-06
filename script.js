@@ -41,8 +41,32 @@ var symbolList = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", "-", "=
 var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var uppercaseList = []
 
+var optionsCart = []
+
+
 for (var i = 0; i < numberList.length; i++) {
   uppercaseList[i] = lowercaseList[i].toUpperCase()
+}
+
+if (yesNumbers === true) {
+optionsCart.push(numberList)
+}
+
+if (yesSymbols === true) {
+optionsCart.push(symbolList)
+}
+
+if (yesLower === true) {
+optionsCart.push(lowercaseList)
+}
+
+if (yesUpper === true) {
+optionsCart.push(uppercaseList)
+}
+
+var generatedPassword = "" 
+for (var i = 0; i < passwordLength; i++) {
+  
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -55,6 +79,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); 
