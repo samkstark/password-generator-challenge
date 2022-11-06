@@ -16,10 +16,40 @@
 
 // Assignment code here
 function generatePassword() {
- 
+
+  var userInput = prompt("How many characters would you like your password to be?")
+
+  var passwordLength = parseInt(userInput)
+
+  if (isNaN(passwordLength)) {
+    alert("That is not a number!")
+    return
+  } 
+
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("The password length must be between 8 and 128 characters!")
+    return
 }
 
+var yesNumbers = confirm("Would you like your password to include numbers?")
+var yesSymbols = confirm("Would you like your password to include symbols?")
+var yesLower = confirm("Would you like your password to include lowercase letters?")
+var yesUpper = confirm("Would you like your password to include uppercase letters?")
 
+function yesNumbers() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+function yesSymbols() {
+  const symbols = '!@$%^&*(){}[],.<>/#~';
+  return symbols[Math.floor(Math.random() * symbols.length)]; 
+ }
+ function yesLowers() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
+function yesUppers() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -33,4 +63,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
