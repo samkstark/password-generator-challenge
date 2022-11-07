@@ -15,6 +15,19 @@
 
 
 // Assignment code here
+function randomInt(min, max) {
+  if (!max) {
+    max = min;
+    min = 0;
+  }
+  var rand = Math.random();
+return Math.floor(min*(1- rand) + rand*max)
+} 
+
+function getRandomItem(list) {
+  return list[randomInt(list.length)]
+}
+
 function generatePassword() {
 
   var userInput = prompt("How many characters would you like your password to be?")
@@ -64,12 +77,24 @@ if (yesUpper === true) {
 optionsCart.push(uppercaseList)
 }
 
+if (optionsCart.length === 0) {
+  optionsCart.push(lowercaseList)
+}
+
 var generatedPassword = "" 
+
 for (var i = 0; i < passwordLength; i++) {
-  
+var randomList = getRandomItem(optionsCart)
+var randomCharacter = getRandomItem(randomList)
+generatedPassword += randomCharacter
+}
+
+console.log(generatedPassword)
+return generatedPassword
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
 
 // Write password to the #password input
 function writePassword() {
@@ -77,9 +102,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); 
+generateBtn.addEventListener("click", writePassword);
