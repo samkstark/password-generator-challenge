@@ -13,5 +13,10 @@ https://github.com/samkstark/password-generator-challenge
 
 ![Screenshot](./password-screenshot.jpg)
 
+## Credits
+
+Starter code from Xandromus entitled "friendly-parakeet".
+Published on 15 March, 2020.
+
 
 
